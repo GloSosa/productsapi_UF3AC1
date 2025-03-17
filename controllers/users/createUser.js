@@ -15,15 +15,12 @@ const createUser = ((req, res) => {
   // console.log(user);
   User.create(user)
     .then((results) => {
-      // HTTP response
       res.json(`User registered successfully. Use apikey= ${user.apiKey}`);
     })
-    .catch((error)=>{
+    .catch((error) => {
+      console.log(error);           // <-- Para ver el error en la consola
       res.json("Error when registering user");
-    })
-    .finally(()=>{
-      //
-    })
+    });
 })
 
 module.exports = createUser
