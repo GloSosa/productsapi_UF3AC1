@@ -3,7 +3,9 @@ const products_routes = require('./routes/products.js')
 
 //Server instantiation
 const app = express()
-
+const slugify = require('slugify');
+const message = "Hello from my API!";
+console.log(slugify(message, { replacement: '*' }));
 //Server configuration: template engine
 app.set('views', './views');
 app.set('view engine', 'pug');
